@@ -1,0 +1,93 @@
+<main class="contact-page">
+  <div class="contact-form">
+    <h2 class="text-center fw-bold">Get in Touch</h2>
+    <p class="text-center text-muted">
+      We'd love to hear from you! Fill out the form below and we'll get back to
+      you as soon as possible.
+    </p>
+
+    <form (ngSubmit)="sendEmail()">
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label required">First Name</label>
+          <input
+            type="text"
+            [(ngModel)]="firstName"
+            name="firstName"
+            class="form-control"
+            placeholder="Your first name"
+          />
+        </div>
+        <div class="col">
+          <label class="form-label required">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="lastName"
+            [(ngModel)]="lastName"
+            placeholder="Your last name"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required">Email Address</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="your.email@example.com"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Phone Number</label>
+        <input
+          type="tel"
+          class="form-control"
+          name="phoneNumber"
+          [(ngModel)]="phoneNumber"
+          placeholder="(123) 456-7890"
+        />
+      </div>
+
+      <div class="row mb-3">
+        <div class="col">
+          <label class="form-label">Child's Name (if applicable)</label>
+          <input
+            type="text"
+            class="form-control"
+            name="childName"
+            [(ngModel)]="childName"
+            placeholder="Child's name"
+          />
+        </div>
+        <div class="col">
+          <label class="form-label">Child's Age</label>
+          <select class="form-select" [(ngModel)]="childAge" name="childAge">
+            <option selected>Select age range</option>
+            <option>0-1 year</option>
+            <option>2-3 years</option>
+            <option>4-5 years</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required">Reason for Contact</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="reason"
+          name="reason"
+          rows="3"
+          placeholder="Write your message here..."
+        ></textarea>
+      </div>
+
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</main>

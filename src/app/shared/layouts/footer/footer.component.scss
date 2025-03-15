@@ -1,0 +1,31 @@
+.footer {
+  background-color: #064635;
+  padding: 60px;
+
+  img {
+    height: 250px;
+    width: 350px;
+
+    @media (width <= 768px) {
+      height: 150px;
+      width: 250px;
+    }
+
+    @media (width <= 425px) {
+      height: 100px;
+      width: 150px;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navLinks {
+    .footer-svg {
+      padding-right: 60px;
+    }
+  }
+}
