@@ -1,5 +1,9 @@
 <main class="home-page">
-  <div class="hero-section-container">
+  <div
+    class="hero-section-container"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="hero-section">
       <div class="row d-flex">
         <div class="hero-text">
@@ -9,7 +13,9 @@
           <p class="p-design pt-0 text-center">
             Helping children grow with love, learning, and laughter.
           </p>
-          <button class="border-0 p-3 mb-3">Learn More</button>
+          <button class="border-0 p-3 mb-3" (click)="goToAbout()">
+            Learn More
+          </button>
         </div>
       </div>
     </div>
@@ -74,11 +80,7 @@
             child feel valued, safe, and empowered to reach their full
             potential.
           </p>
-          <button
-            class="cta-button mb-4 mb-md-0"
-            type="button"
-            (click)="navigate('/services')"
-          >
+          <button class="cta-button mb-4 mb-md-0" (click)="goToServices()">
             View More →
           </button>
         </div>

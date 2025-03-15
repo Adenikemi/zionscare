@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-services',
@@ -7,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
+  private router = inject(Router);
 
+  ngOnInit(): void {
+    AOS.init();
+    AOS.refresh();
+  }
+
+  goToContact() {
+    this.router.navigate(["/contact"])
+  }
 }

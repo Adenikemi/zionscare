@@ -4,6 +4,7 @@ import emailjs  from  '@emailjs/browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PageModalService } from '../../core/services/page-modal.service';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
@@ -21,6 +22,11 @@ export class ContactComponent {
   childName: string = '';
   childAge: string = '';
   reason: string = '';
+
+  ngOnInit(): void {
+    AOS.init();
+    AOS.refresh();
+  }
 
   constructor() {
     emailjs.init('NA6ryad6mQkycsSvi');

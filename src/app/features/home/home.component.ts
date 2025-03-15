@@ -1,6 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +10,21 @@ import { NavigationEnd, Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  activeRoute: string = '/';
   private router = inject(Router);
+
+  ngOnInit(): void {
+    AOS.init();
+    AOS.refresh();
+  }
+
+  goToAbout() {
+    this.router.navigate(["/about"])
+  }
+
+  goToServices() {
+    this.router.navigate(["/services"])
+    
+  }
 
   services = [
     {
@@ -44,20 +58,4 @@ export class HomeComponent {
       message: "We provide supervised visitations, parenting support, and reunification planning for families."
     }
   ]
-
-  constructor() {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.activeRoute = event.urlAfterRedirects;
-      }
-    });
-  }
-
-  setActive(route: string) {
-    this.activeRoute = route;
-  }
-
-  navigate(path: string) {
-    this.router.navigate([path]);
-  }
 }

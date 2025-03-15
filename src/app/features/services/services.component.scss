@@ -82,7 +82,10 @@
           }
         }
 
-        button {
+        a {
+          color: black;
+          text-shadow: none;
+          text-decoration: none;
           padding: 60px;
           font-weight: bold;
           background-color: rgba(240, 255, 240, 0.8);

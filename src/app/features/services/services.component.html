@@ -1,5 +1,9 @@
 <main class="services-page">
-  <div class="hero-section-container">
+  <div
+    class="hero-section-container"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+  >
     <div class="hero-section">
       <div class="row d-flex">
         <div class="hero-text">
@@ -7,11 +11,12 @@
           <p class="p-design pt-0 text-center">
             Helping children grow with love, learning, and laughter.
           </p>
-          <button class="border-0 p-3">Learn More</button>
+          <a class="border-0 p-3" href="/services#serviceSection">Learn More</a>
         </div>
       </div>
     </div>
   </div>
+
   <div class="program-section d-none">
     <h2 class="pb-3 pt-5 text-center">Beyond Basic Care</h2>
     <p class="pb-5 text-center">
@@ -96,8 +101,8 @@
     </div>
   </div>
 
-  <div class="all-services-section">
-    <h2 class="text-center">Beyond Basic Care</h2>
+  <div class="all-services-section" id="serviceSection">
+    <h2 class="text-center pb-md-3">Beyond Basic Care</h2>
     <p class="pb-5 pt-0 text-center">
       We offer specialized programs and activities that enrich your child's
       experience and provide opportunities for discovery, creativity, and joy.
@@ -689,7 +694,9 @@
       </div>
     </div>
     <div class="text-center">
-      <button class="btn gradient-btn">Send us a message</button>
+      <button class="btn gradient-btn" (click)="goToContact()">
+        Send us a message
+      </button>
     </div>
   </div>
 </main>
