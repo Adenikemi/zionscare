@@ -3,16 +3,17 @@
   padding: 60px;
 
   img {
-    height: 250px;
-    width: 350px;
+    width: 250px;
+
+    @media (width < 768px) {
+      object-fit: cover;
+    }
 
     @media (width <= 768px) {
-      height: 150px;
       width: 250px;
     }
 
     @media (width <= 425px) {
-      height: 100px;
       width: 150px;
     }
   }
@@ -21,6 +22,12 @@
     color: white;
     font-size: 20px;
     padding-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
   }
 
   .navLinks {

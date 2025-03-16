@@ -141,18 +141,21 @@
 
         .all-services-text {
           .all-services-h4 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 600;
             line-height: 28px;
             margin-bottom: 8px;
 
             @media (width > 768px) {
               line-height: normal;
+              font-size: 28px;
             }
           }
 
           .all-services-p {
             margin-top: 16px;
+            display: flex;
+            align-items: center;
 
             @media (width < 425px) {
               margin-bottom: 0;

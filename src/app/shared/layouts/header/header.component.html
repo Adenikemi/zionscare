@@ -43,7 +43,6 @@
               id="home"
               aria-current="page"
               routerLink="/"
-              (click)="setActive('/')"
               >Home</a
             >
           </li>
@@ -52,7 +51,6 @@
               class="nav-link"
               [ngClass]="{ active: activeRoute === '/about' }"
               routerLink="/about"
-              (click)="setActive('/about')"
               >About</a
             >
           </li>
@@ -62,7 +60,6 @@
               [ngClass]="{ active: activeRoute === '/services' }"
               aria-current="page"
               routerLink="/services"
-              (click)="setActive('/services')"
               >Services</a
             >
           </li>
@@ -71,7 +68,6 @@
               class="nav-link"
               [ngClass]="{ active: activeRoute === '/contact' }"
               routerLink="/contact"
-              (click)="setActive('/contact')"
               >Contact</a
             >
           </li>
