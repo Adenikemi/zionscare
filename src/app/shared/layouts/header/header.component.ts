@@ -20,10 +20,6 @@ export class HeaderComponent {
     });
   }
 
-  setActive(route: string) {
-    this.activeRoute = route;
-  }
-
   isScrolled = false;
 
   @HostListener('window:scroll', [])
