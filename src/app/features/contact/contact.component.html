@@ -54,22 +54,22 @@
 
       <div class="row mb-3">
         <div class="col">
-          <label class="form-label">Child's Name (if applicable)</label>
+          <label class="form-label">Youth's Name (if applicable)</label>
           <input
             type="text"
             class="form-control"
             name="childName"
             [(ngModel)]="childName"
-            placeholder="Child's name"
+            placeholder="Youth's name"
           />
         </div>
         <div class="col">
-          <label class="form-label">Child's Age</label>
+          <label class="form-label">Youth's Age</label>
           <select class="form-select" [(ngModel)]="childAge" name="childAge">
             <option selected>Select age range</option>
-            <option>0-1 year</option>
-            <option>2-3 years</option>
-            <option>4-5 years</option>
+            <option>9-12 years</option>
+            <option>13-14 years</option>
+            <option>15-17 years</option>
           </select>
         </div>
       </div>
@@ -86,7 +86,7 @@
       </div>
 
       <div class="d-grid">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary border-0">Submit</button>
       </div>
     </form>
   </div>

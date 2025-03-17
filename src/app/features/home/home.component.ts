@@ -55,7 +55,7 @@ export class HomeComponent {
     {
       icon: "assets/images/logo/family_reunification.png",
       heading: "Family Reunification Services",
-      message: "We provide supervised visitations, parenting support, and reunification planning for families."
+      message: "We provide supervised visitations, parenting support, and reunification planning for families where applicable."
     }
   ]
 }
