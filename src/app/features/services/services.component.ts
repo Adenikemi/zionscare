@@ -1,5 +1,4 @@
 import { Component, Inject, inject, PLATFORM_ID  } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
 
