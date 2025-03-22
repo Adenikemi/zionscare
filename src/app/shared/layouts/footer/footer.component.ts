@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class FooterComponent {
   activeRoute: string = '/';
   private router = inject(Router)
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.activeRoute = event.urlAfterRedirects;
@@ -24,7 +24,9 @@ export class FooterComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    this.isScrolled = scrollPosition > 70;
+    if (isPlatformBrowser(this.platformId)) {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      this.isScrolled = scrollPosition > 70;
+    }
   }
 }
