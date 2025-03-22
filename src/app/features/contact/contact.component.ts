@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import emailjs  from  '@emailjs/browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -24,11 +24,15 @@ export class ContactComponent {
   reason: string = '';
 
   ngOnInit(): void {
-    AOS.init();
-    AOS.refresh();
+    if (isPlatformBrowser(this.platformId)) {
+      import('aos').then((AOS) => {
+        AOS.init();
+        AOS.refresh();
+      });
+    }
   }
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     emailjs.init('NA6ryad6mQkycsSvi');
   }
 

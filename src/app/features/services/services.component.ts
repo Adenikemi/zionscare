@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, inject, PLATFORM_ID  } from '@angular/core';
 import { Router } from '@angular/router';
 import * as AOS from 'aos';
@@ -13,8 +14,12 @@ export class ServicesComponent {
   private router = inject(Router);
 
   ngOnInit(): void {
-    AOS.init();
-    AOS.refresh();
+    if (isPlatformBrowser(this.platformId)) {
+      import('aos').then((AOS) => {
+        AOS.init();
+        AOS.refresh();
+      });
+    }
   }
 
   goToContact() {
