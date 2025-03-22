@@ -43,7 +43,10 @@
     <div class="row m-0">
       <div class="col-md-6 p-0">
         <div class="left-section">
-          <img src="assets\images\field.jpg" alt="" />
+          <img
+            src="assets\images\field.jpg"
+            alt="children playing in the field"
+          />
         </div>
       </div>
       <div class="col-md-6 d-flex align-items-center">
@@ -89,7 +92,7 @@
         <div class="row g-3">
           <div class="col-md-6" *ngFor="let item of services">
             <div class="service-card">
-              <img [src]="item.icon" alt="Management" />
+              <img [src]="item.icon" [alt]="item.heading" />
               <h5>{{ item.heading }}</h5>
               <p>
                 {{ item.message }}
@@ -107,7 +110,7 @@
       <div class="col-md-6">
         <div class="left-section m-0">
           <div class="image-section">
-            <img src="assets\images\mission.jpg" alt="" />
+            <img src="assets\images\mission.jpg" alt="vision image" />
           </div>
           <div class="d-flex flex-column pt-4">
             <h1 class="text-center">Our Vision</h1>
@@ -121,7 +124,7 @@
       <div class="col-md-6">
         <div class="right-section">
           <div class="image-section">
-            <img src="assets\images\care.jpg" alt="" />
+            <img src="assets\images\care.jpg" alt="mission image" />
           </div>
           <div class="d-flex flex-column pt-4">
             <h1 class="text-center">Our Mission</h1>
