@@ -19,11 +19,6 @@ export class AppComponent {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      import('aos').then((AOS) => {
-        AOS.init();
-        AOS.refresh();
-      });
-
       this.router.events.subscribe((event) => {
         if (event instanceof NavigationEnd) {
           if (!event.url.includes('#')) {
