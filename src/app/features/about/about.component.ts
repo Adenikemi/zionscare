@@ -1,5 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -9,15 +8,4 @@ import { Component, Inject, PLATFORM_ID } from '@angular/core';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-  
-
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      import('aos').then((AOS) => {
-        AOS.init();
-        AOS.refresh();
-      });
-    }
-  }
 }

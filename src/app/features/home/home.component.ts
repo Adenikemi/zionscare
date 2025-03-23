@@ -1,7 +1,6 @@
-import { isPlatformBrowser, NgFor } from '@angular/common';
-import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
+import {  NgFor } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +10,6 @@ import * as AOS from 'aos';
 })
 export class HomeComponent {
   private router = inject(Router);
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-  
-
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      import('aos').then((AOS) => {
-        AOS.init();
-        AOS.refresh();
-      });
-    }
-  }
 
   goToAbout() {
     this.router.navigate(["/about"])
