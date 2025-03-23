@@ -1,10 +1,9 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import emailjs  from  '@emailjs/browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PageModalService } from '../../core/services/page-modal.service';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-contact',
@@ -23,16 +22,7 @@ export class ContactComponent {
   childAge: string = '';
   reason: string = '';
 
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      import('aos').then((AOS) => {
-        AOS.init();
-        AOS.refresh();
-      });
-    }
-  }
-
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
     emailjs.init('NA6ryad6mQkycsSvi');
   }
 
