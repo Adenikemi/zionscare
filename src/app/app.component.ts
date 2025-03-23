@@ -13,7 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'zionscare';
+  title = 'zionqualitycare';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
 
